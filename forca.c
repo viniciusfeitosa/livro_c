@@ -15,37 +15,36 @@ void abertura()
 
 void escolhepalavra()
 {
-	sprintf(palavrasecreta , "MELANCIA");
+    sprintf(palavrasecreta , "MELANCIA");
 }
 
 void chuta()
 {
-	char chute;
-	printf("Qual letra? ");
-	scanf(" %c", &chute);
-
-	chutes[tentativas] = chute;
+    char chute;
+    printf("Qual letra? ");
+    scanf(" %c", &chute);   
+    chutes[tentativas] = chute;
 }
 
 int jachutou(char letra)
 {
-	int achou = 0;
+    int achou = 0;
 
-	for(int j = 0; j < tentativas; j++) {
-		if (chutes[j] == letra) {
+    for(int j = 0; j < tentativas; j++) {
+        if (chutes[j] == letra) {
            achou = 1;
            break;
         }
-	}
+    }
 
-	return achou;
+    return achou;
 }
 
 void desenhaforca()
 {
-	printf("Você já de %d chutes\n", tentativas);
+    printf("Você já de %d chutes\n", tentativas);
 
-	for (int i = 0; i < strlen(palavrasecreta); i++) {
+    for (int i = 0; i < strlen(palavrasecreta); i++) {
         if (jachutou(palavrasecreta[i])) {
             printf("%c ", palavrasecreta[i]);
         } else {
@@ -61,14 +60,14 @@ int main()
     int enforcou = 0;
 
     abertura();
-	escolhepalavra();
+    escolhepalavra();
 
     do {
 
-		desenhaforca();
+        desenhaforca();
         chuta();
 
-		tentativas++;
+        tentativas++;
     } while (!acertou && !enforcou);
     return 0;
 }
