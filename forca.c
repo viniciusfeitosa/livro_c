@@ -206,7 +206,7 @@ int main()
         printf("A palavra era **%s**\n\n", palavrasecreta);
 
         printf("    _______________         \n");
-        printf("   /               \\       \n"); 
+        printf("   /               \\       \n");
         printf("  /                 \\      \n");
         printf("//                   \\/\\  \n");
         printf("\\|   XXXX     XXXX   | /   \n");
